@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "336313643732",
+    "project_id": "herhero-db91e",
+    "storage_bucket": "herhero-db91e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336313643732:android:ad20d2d2949f4558d34141",
+        "android_client_info": {
+          "package_name": "com.avicodes.herhero"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336313643732-elren244nsejnralcq87sb0pkiqfgdts.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.avicodes.herhero",
+            "certificate_hash": "2a04d9bf14828a6d82ab37bdd9c2bf26427c03b9"
+          }
+        },
+        {
+          "client_id": "336313643732-9u6r29j79dn0sffvf72mkue05sf3ialk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoLD7rGhKLxzy1RF3hS_v6tB-z3iwCjkQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "336313643732-9u6r29j79dn0sffvf72mkue05sf3ialk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

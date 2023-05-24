@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">PowerConstruct</string>
+
+    <string name="day_ago_text"> days ago</string>
+    <string name="just_now_text">just now</string>
+    <string name="minute_ago_text">a minute ago</string>
+    <string name="minutes_ago_text"> minutes ago</string>
+    <string name="hour_ago_text">an hour ago</string>
+    <string name="hours_ago_text"> hour ago</string>
+    <string name="yesterday_text">yesterday</string>
+
 </resources>
