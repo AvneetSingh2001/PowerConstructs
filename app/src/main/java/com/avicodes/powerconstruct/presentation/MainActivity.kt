@@ -1,7 +1,8 @@
-package com.avicodes.powerconstruct
+package com.avicodes.powerconstruct.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.avicodes.powerconstruct.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
