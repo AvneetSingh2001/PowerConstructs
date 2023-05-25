@@ -10,3 +10,12 @@ An Assignment app of powerplay.
 5. Single tap on the existing marker on the image to view its details.
 6. Tap the Floating Action Button on the Drawing Profile to view the detail list of all the added marker to that drawing.
 
+## Tech Used:
+
+1. Firebase firestore to store the data.
+2. Firebase Storage to store the images.
+3. Hilt for Dependency Injection.
+4. Flow for smooth and continuous states.
+5. Clean MVVM Pattern.
+6. Glide for image downloading.
+7. subsampling-scale-image-view library for zoom.
