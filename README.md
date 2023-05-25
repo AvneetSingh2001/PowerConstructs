@@ -22,3 +22,5 @@ An Assignment app of powerplay.
 8. ViewBinding
 
 ## Bonus Features Mentioned are also implemented.
+1. all markers of a drawing are shown in a list with title, description and creation time
+2. Shown all times in social format like few minutes ago , an hour ago , a day ago etc
