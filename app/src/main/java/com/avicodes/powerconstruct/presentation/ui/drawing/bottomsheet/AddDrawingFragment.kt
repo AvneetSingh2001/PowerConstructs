@@ -1,4 +1,4 @@
-package com.avicodes.powerconstruct.presentation.ui.drawing
+package com.avicodes.powerconstruct.presentation.ui.drawing.bottomsheet
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -54,11 +54,8 @@ class AddDrawingFragment : BottomSheetDialogFragment() {
                         viewModel.addDrawing(
                             title = title.toString(),
                             imgUri = imageUri
-                        ).collectLatest {
-                            withContext(Dispatchers.Main) {
-                                validateResponse(it)
-                            }
-                        }
+                        )
+                        dismiss()
                     }
                 } else {
                     Toast.makeText(context, "Enter Title", Toast.LENGTH_SHORT).show()
@@ -73,28 +70,6 @@ class AddDrawingFragment : BottomSheetDialogFragment() {
             Glide.with(ivDrawing)
                 .load(imageUri)
                 .into(ivDrawing)
-        }
-    }
-
-    private fun validateResponse(it: Result<String>) {
-        when (it) {
-            is Result.Success -> {
-                Toast.makeText(context, "Drawing Added", Toast.LENGTH_SHORT)
-                    .show()
-                viewModel.getAllDrawings()
-                this.dismiss()
-            }
-
-            is Result.Error -> {
-                Toast.makeText(
-                    context,
-                    "Something went wrong",
-                    Toast.LENGTH_SHORT
-                ).show()
-                requireView().findNavController().popBackStack()
-            }
-
-            else -> {}
         }
     }
 

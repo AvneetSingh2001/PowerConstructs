@@ -10,4 +10,6 @@ interface MarkerRepository {
     fun getAllMarkers(drawingId: String): Flow<Result<List<Marker>>>
 
     fun postMarker(marker: Marker): Flow<Result<String>>
+
+    suspend fun updateMarkerCount(markerCount: Int, drawingId: String)
 }

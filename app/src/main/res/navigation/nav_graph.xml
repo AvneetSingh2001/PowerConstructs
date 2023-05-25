@@ -16,7 +16,7 @@
     </fragment>
     <dialog
         android:id="@+id/addDrawingFragment"
-        android:name="com.avicodes.powerconstruct.presentation.ui.drawing.AddDrawingFragment"
+        android:name="com.avicodes.powerconstruct.presentation.ui.drawing.bottomsheet.AddDrawingFragment"
         android:label="fragment_add_drawing"
         tools:layout="@layout/fragment_add_drawing" >
         <argument

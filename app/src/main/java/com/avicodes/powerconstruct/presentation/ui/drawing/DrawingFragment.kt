@@ -1,6 +1,5 @@
 package com.avicodes.powerconstruct.presentation.ui.drawing
 
-import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -13,18 +12,15 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.avicodes.powerconstruct.R
 import com.avicodes.powerconstruct.data.models.Drawing
 import com.avicodes.powerconstruct.databinding.FragmentDrawingBinding
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import com.avicodes.powerconstruct.data.utils.Result
 import com.avicodes.powerconstruct.presentation.MainActivityViewModel
+import com.avicodes.powerconstruct.presentation.ui.drawing.adapter.DrawingAdapter
 
 
 class DrawingFragment : Fragment() {
@@ -32,7 +28,7 @@ class DrawingFragment : Fragment() {
     private var _binding: FragmentDrawingBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel by activityViewModels<MainActivityViewModel> ()
+    private val viewModel by activityViewModels<MainActivityViewModel>()
 
     private lateinit var adapter: DrawingAdapter
 
@@ -76,12 +72,44 @@ class DrawingFragment : Fragment() {
             })
         }
 
+        adapter.setOnItemClickListener {
+            routeToMarkerScreen(drawing = it)
+        }
 
         binding.apply {
             btnAddDrawing.setOnClickListener {
                 pickImage()
             }
         }
+
+        observeDrawingUploaded()
+    }
+
+    private fun observeDrawingUploaded() {
+        viewModel.drawingUploaded.observe(viewLifecycleOwner, Observer {
+            when (it) {
+                is Result.Success -> {
+                    hideProg()
+                    Toast.makeText(context, "Drawing Added", Toast.LENGTH_SHORT)
+                        .show()
+                    viewModel.getAllDrawings()
+                    viewModel.drawingUploaded.postValue(Result.NotInitialized)
+                }
+
+                is Result.Error -> {
+                    hideProg()
+                    Toast.makeText(
+                        context,
+                        "Something went wrong",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+                else -> {
+                    showProg()
+                }
+            }
+        })
     }
 
 
@@ -100,16 +128,20 @@ class DrawingFragment : Fragment() {
             }
         }
 
+    private fun routeToMarkerScreen(drawing: Drawing) {
+    }
 
     private fun routeToAddDrawingScreen(drawingUri: Uri?) {
-        val action = DrawingFragmentDirections.actionDrawingFragmentToAddDrawingFragment(drawingUri.toString())
+        val action =
+            DrawingFragmentDirections.actionDrawingFragmentToAddDrawingFragment(drawingUri.toString())
         requireView().findNavController().navigate(action)
     }
 
 
     private fun initDrawingRecyclerView() {
         binding.apply {
-            rvDrawings.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+            rvDrawings.layoutManager =
+                LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             rvDrawings.adapter = adapter
         }
     }

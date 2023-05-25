@@ -1,4 +1,4 @@
-package com.avicodes.powerconstruct.presentation.ui.drawing
+package com.avicodes.powerconstruct.presentation.ui.drawing.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.avicodes.powerconstruct.data.models.Drawing
-import com.avicodes.powerconstruct.data.utils.TimeCalc
 import com.avicodes.powerconstruct.data.utils.TimeCalc.getTimeAgo
 import com.avicodes.powerconstruct.databinding.ItemDrawingBinding
 import com.bumptech.glide.Glide
