@@ -7,7 +7,7 @@ An Assignment app of powerplay.
 2. Tap the drawing to view its profile, added markers and to add Markers.
 3. Pinch the image to zoom in and zoom out.
 4. Explore the image and Double tap on the image to Add a new marker.
-5. Single tap on the existing marker on the image to view its details.
+5. Single tap on the existing marker on the image to view its details in BottomSheet.
 6. Tap the Floating Action Button on the Drawing Profile to view the detail list of all the added marker to that drawing.
 
 ## Tech Used:
@@ -19,3 +19,4 @@ An Assignment app of powerplay.
 5. Clean MVVM Pattern.
 6. Glide for image downloading.
 7. subsampling-scale-image-view library for zoom.
+8. ViewBinding
