@@ -1,4 +1,4 @@
-package com.avicodes.powerconstruct.presentation
+package com.avicodes.powerconstruct.presentation.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

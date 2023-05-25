@@ -1,4 +1,4 @@
-package com.avicodes.powerconstruct.presentation
+package com.avicodes.powerconstruct.presentation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -29,5 +29,6 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
+
     }
 }

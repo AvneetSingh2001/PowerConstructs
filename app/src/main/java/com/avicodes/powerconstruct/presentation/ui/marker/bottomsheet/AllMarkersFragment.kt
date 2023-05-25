@@ -8,7 +8,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.avicodes.powerconstruct.databinding.FragmentAllMarkersBinding
-import com.avicodes.powerconstruct.presentation.MainActivityViewModel
+import com.avicodes.powerconstruct.presentation.ui.MainActivityViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.avicodes.powerconstruct.data.utils.Result
 import com.avicodes.powerconstruct.presentation.ui.marker.adapter.MarkerAdapter

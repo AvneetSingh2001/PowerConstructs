@@ -1,6 +1,5 @@
 package com.avicodes.powerconstruct.presentation.ui.marker
 
-import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.graphics.PointF
 import android.graphics.drawable.Drawable
@@ -17,11 +16,10 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
-import com.avicodes.powerconstruct.R
 import com.avicodes.powerconstruct.data.models.Drawing
 import com.avicodes.powerconstruct.data.models.Marker
 import com.avicodes.powerconstruct.databinding.FragmentMarkerBinding
-import com.avicodes.powerconstruct.presentation.MainActivityViewModel
+import com.avicodes.powerconstruct.presentation.ui.MainActivityViewModel
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
@@ -35,6 +33,7 @@ class MarkerFragment : Fragment() {
     private val binding get() = _binding!!
 
     val viewModel by activityViewModels<MainActivityViewModel>()
+
     val args: MarkerFragmentArgs by navArgs()
 
     private lateinit var drawing: Drawing

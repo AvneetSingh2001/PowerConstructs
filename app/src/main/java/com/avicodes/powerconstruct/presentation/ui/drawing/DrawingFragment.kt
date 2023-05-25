@@ -19,7 +19,7 @@ import com.avicodes.powerconstruct.data.models.Drawing
 import com.avicodes.powerconstruct.databinding.FragmentDrawingBinding
 import kotlinx.coroutines.launch
 import com.avicodes.powerconstruct.data.utils.Result
-import com.avicodes.powerconstruct.presentation.MainActivityViewModel
+import com.avicodes.powerconstruct.presentation.ui.MainActivityViewModel
 import com.avicodes.powerconstruct.presentation.ui.drawing.adapter.DrawingAdapter
 
 
