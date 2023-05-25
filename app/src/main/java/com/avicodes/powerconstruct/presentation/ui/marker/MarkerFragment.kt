@@ -1,7 +1,6 @@
 package com.avicodes.powerconstruct.presentation.ui.marker
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.PointF
 import android.graphics.drawable.Drawable
@@ -26,8 +25,8 @@ import com.avicodes.powerconstruct.presentation.MainActivityViewModel
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
+import com.davemorrissey.labs.subscaleview.ImageSource
 import com.avicodes.powerconstruct.data.utils.Result
-import com.avicodes.powerconstruct.presentation.ui.marker.MarkerFragmentArgs
 
 
 class MarkerFragment : Fragment() {
@@ -58,20 +57,102 @@ class MarkerFragment : Fragment() {
 
         viewModel.getAllMarkers(drawingId = drawing.id)
 
+        initMarkers()
+        observeMarkers()
         observeMarkerUploaded()
 
         binding.showMarkersButton.setOnClickListener {
             routeToShowAllMarkers()
         }
+    }
 
+    private fun observeMarkers() {
+        viewModel.markers.observe(viewLifecycleOwner, Observer {
+            when (it) {
+                is Result.Success -> {
+                    it.data?.let { list ->
+                        markersList = list
+                        Log.e("Avneet", markersList.toString())
+                        binding.ivDrawing.markers = list.map { marker ->
+                            PointF(marker.x, marker.y)
+                        }.toMutableList() ?: mutableListOf()
+                    }
+                }
 
+                is Result.Error -> {
+                    Toast.makeText(
+                        context,
+                        "Something went wrong",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
 
-        Glide.with(binding.ivDrawing)
-            .load(drawing.url)
-            .into(binding.ivDrawing)
+                else -> {
+
+                }
+            }
+        })
     }
 
 
+    private fun initMarkers() {
+        binding.apply {
+
+            val gestureDetector =
+                GestureDetector(context, object : GestureDetector.SimpleOnGestureListener() {
+
+                    override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
+                        ivDrawing.viewToSourceCoord(e.x, e.y)?.let { center ->
+                            for (marker in markersList) {
+                                if (ivDrawing.isInside(
+                                        center,
+                                        PointF(marker.x, marker.y)
+                                    )
+                                ) {
+                                    routeToShowMarker(marker)
+                                    break
+                                }
+                            }
+                        }
+                        return e != null
+                    }
+
+                    override fun onDoubleTap(e: MotionEvent): Boolean {
+                        ivDrawing.viewToSourceCoord(e.x, e.y)?.let {
+                            routeToAddMarker(
+                                it.x,
+                                it.y,
+                                drawingId = drawing.id,
+                                markerCount = drawing.markerCount
+                            )
+                        }
+                        return true
+                    }
+
+                })
+
+            Glide.with(ivDrawing.context)
+                .asBitmap()
+                .load(drawing.url)
+                .into(object : CustomTarget<Bitmap>() {
+                    override fun onResourceReady(
+                        resource: Bitmap,
+                        transition: Transition<in Bitmap>?
+                    ) {
+                        ivDrawing.setImage(ImageSource.bitmap(resource))
+                        binding.ivDrawing.setOnTouchListener { view, motionEvent ->
+                            view.performClick()
+                            gestureDetector.onTouchEvent(motionEvent)
+                        }
+                    }
+
+                    override fun onLoadCleared(placeholder: Drawable?) {
+
+                    }
+                })
+
+        }
+    }
 
 
     private fun observeMarkerUploaded() {
@@ -101,6 +182,22 @@ class MarkerFragment : Fragment() {
         })
     }
 
+    fun routeToShowMarker(marker: Marker) {
+        val action = MarkerFragmentDirections.actionMarkerFragmentToShowMarkerFragment(
+            marker = marker
+        )
+        requireView().findNavController().navigate(action)
+    }
+
+    fun routeToAddMarker(x: Float, y: Float, drawingId: String, markerCount: Int) {
+        val action = MarkerFragmentDirections.actionMarkerFragmentToAddMarkerFragment(
+            x = x,
+            y = y,
+            drawingId = drawingId,
+            markerCount = markerCount
+        )
+        requireView().findNavController().navigate(action)
+    }
 
     private fun routeToShowAllMarkers() {
         val action = MarkerFragmentDirections.actionMarkerFragmentToAllMarkersFragment()

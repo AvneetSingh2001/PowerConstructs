@@ -16,8 +16,8 @@ data class Marker(
 
     val timeCreated: String = "",
 
-    val x: Float,
+    val x: Float = 0f,
 
-    val y: Float
+    val y: Float = 0f
 
 ) : Parcelable

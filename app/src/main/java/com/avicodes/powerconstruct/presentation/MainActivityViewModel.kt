@@ -5,13 +5,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.avicodes.powerconstruct.data.models.Drawing
 import com.avicodes.powerconstruct.data.models.Marker
+import com.avicodes.powerconstruct.data.utils.Result
 import com.avicodes.powerconstruct.domain.repository.DrawingRepository
 import com.avicodes.powerconstruct.domain.repository.MarkerRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import com.avicodes.powerconstruct.data.utils.Result
 
 
 class MainActivityViewModel(

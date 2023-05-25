@@ -129,6 +129,8 @@ class DrawingFragment : Fragment() {
         }
 
     private fun routeToMarkerScreen(drawing: Drawing) {
+        val action = DrawingFragmentDirections.actionDrawingFragmentToMarkerFragment(drawing)
+        requireView().findNavController().navigate(action)
     }
 
     private fun routeToAddDrawingScreen(drawingUri: Uri?) {

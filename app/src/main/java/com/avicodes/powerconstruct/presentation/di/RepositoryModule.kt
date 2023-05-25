@@ -28,10 +28,9 @@ class RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideMarkerRepository(firestore: FirebaseFirestore, storage: FirebaseStorage): MarkerRepository {
+    fun provideMarkerRepository(firestore: FirebaseFirestore): MarkerRepository {
         return MarkerRepositoryImpl(
             firestore = firestore,
-            storage = storage
         )
     }
 

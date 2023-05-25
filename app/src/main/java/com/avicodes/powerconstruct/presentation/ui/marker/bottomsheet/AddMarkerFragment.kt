@@ -12,7 +12,6 @@ import com.avicodes.powerconstruct.data.models.Marker
 import com.avicodes.powerconstruct.data.utils.Result
 import com.avicodes.powerconstruct.databinding.FragmentAddMarkerBinding
 import com.avicodes.powerconstruct.presentation.MainActivityViewModel
-import com.avicodes.powerconstruct.presentation.ui.marker.bottomsheet.AddMarkerFragmentArgs
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
