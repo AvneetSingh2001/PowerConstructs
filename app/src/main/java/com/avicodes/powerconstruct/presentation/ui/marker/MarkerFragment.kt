@@ -161,10 +161,12 @@ class MarkerFragment : Fragment() {
                     Toast.makeText(context, "Marker Added", Toast.LENGTH_SHORT)
                         .show()
                     viewModel.getAllMarkers(drawingId = drawing.id)
+                    val updatedCount = drawing.markerCount.plus(1)
                     viewModel.updateMarkerCount(
                         drawingId = drawing.id,
-                        markerCount = drawing.markerCount.plus(1)
+                        markerCount = updatedCount
                     )
+                    drawing.markerCount = updatedCount
                     viewModel.markerUploaded.postValue(Result.NotInitialized)
                 }
 
