@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_drawingFragment_to_addDrawingFragment"
             app:destination="@id/addDrawingFragment" />
+        <action
+            android:id="@+id/action_drawingFragment_to_markerFragment"
+            app:destination="@id/markerFragment" />
     </fragment>
     <dialog
         android:id="@+id/addDrawingFragment"
@@ -23,4 +26,53 @@
             android:name="drawingUri"
             app:argType="string" />
     </dialog>
+    <fragment
+        android:id="@+id/markerFragment"
+        android:name="com.avicodes.powerconstruct.presentation.ui.marker.MarkerFragment"
+        android:label="fragment_marker"
+        tools:layout="@layout/fragment_marker" >
+        <argument
+            android:name="drawing"
+            app:argType="com.avicodes.powerconstruct.data.models.Drawing" />
+        <action
+            android:id="@+id/action_markerFragment_to_addMarkerFragment"
+            app:destination="@id/addMarkerFragment" />
+        <action
+            android:id="@+id/action_markerFragment_to_showMarkerFragment"
+            app:destination="@id/showMarkerFragment" />
+        <action
+            android:id="@+id/action_markerFragment_to_allMarkersFragment"
+            app:destination="@id/allMarkersFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/addMarkerFragment"
+        android:name="com.avicodes.powerconstruct.presentation.ui.marker.bottomsheet.AddMarkerFragment"
+        android:label="fragment_add_marker"
+        tools:layout="@layout/fragment_add_marker" >
+        <argument
+            android:name="x"
+            app:argType="float" />
+        <argument android:name="y"
+            app:argType="float" />
+        <argument
+            android:name="drawingId"
+            app:argType="string" />
+        <argument
+            android:name="markerCount"
+            app:argType="integer" />
+    </dialog>
+    <dialog
+        android:id="@+id/showMarkerFragment"
+        android:name="com.avicodes.powerconstruct.presentation.ui.marker.bottomsheet.ShowMarkerFragment"
+        android:label="fragment_show_marker"
+        tools:layout="@layout/fragment_show_marker" >
+        <argument
+            android:name="marker"
+            app:argType="com.avicodes.powerconstruct.data.models.Marker" />
+    </dialog>
+    <dialog
+        android:id="@+id/allMarkersFragment"
+        android:name="com.avicodes.powerconstruct.presentation.ui.marker.bottomsheet.AllMarkersFragment"
+        android:label="fragment_all_markers"
+        tools:layout="@layout/fragment_all_markers" />
 </navigation>

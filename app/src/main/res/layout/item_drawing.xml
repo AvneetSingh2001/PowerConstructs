@@ -16,7 +16,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="170dp"
+            android:layout_height="200dp"
             android:id="@+id/cvConstruction"
             app:cardCornerRadius="15dp"
             app:cardElevation="10dp"
@@ -29,7 +29,7 @@
             <ImageView
                 android:id="@+id/ivDrawing"
                 android:layout_width="match_parent"
-                android:layout_height="170dp"
+                android:layout_height="200dp"
                 android:scaleType="centerCrop"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"

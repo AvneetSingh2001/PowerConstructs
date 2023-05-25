@@ -8,5 +8,7 @@
     <string name="hour_ago_text">an hour ago</string>
     <string name="hours_ago_text"> hour ago</string>
     <string name="yesterday_text">yesterday</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
