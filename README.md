@@ -20,3 +20,5 @@ An Assignment app of powerplay.
 6. Glide for image downloading.
 7. subsampling-scale-image-view library for zoom.
 8. ViewBinding
+
+## Bonus Features Mentioned are also implemented.
