@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_height="wrap_content"
+        >
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:id="@+id/cvConstruction"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="10dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivDrawing"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvDrawingName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Drawing Name"
+            android:layout_marginHorizontal="20dp"
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/cvConstruction"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:id="@+id/cvTop"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tvDrawingName"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/ivMarker"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_anchor_36dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginRight="10dp"
+
+                />
+
+            <TextView
+                android:id="@+id/tvMarkerCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12"
+                app:layout_constraintLeft_toRightOf="@id/ivMarker"
+                android:textColor="#747272"
+                android:layout_marginLeft="5dp"
+                app:layout_constraintTop_toTopOf="@id/time"
+                app:layout_constraintBottom_toBottomOf="@id/time"
+                android:textSize="14sp"
+                />
+
+
+
+
+            <View
+                android:id="@+id/time"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                app:layout_constraintRight_toLeftOf="@id/tvTime"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@drawable/clock"
+                android:layout_marginRight="5dp"
+
+                />
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 hrs ago"
+                android:textColor="#747272"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginHorizontal="6dp"
+                app:layout_constraintTop_toTopOf="@id/time"
+                app:layout_constraintBottom_toBottomOf="@id/time"
+                android:textSize="14sp"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

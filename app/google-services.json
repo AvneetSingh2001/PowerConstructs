@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "336313643732",
-    "project_id": "herhero-db91e",
-    "storage_bucket": "herhero-db91e.appspot.com"
+    "project_number": "114133082330",
+    "project_id": "powerplay-693fe",
+    "storage_bucket": "powerplay-693fe.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:336313643732:android:ad20d2d2949f4558d34141",
+        "mobilesdk_app_id": "1:114133082330:android:b71a858c5e9442fdae85e3",
         "android_client_info": {
-          "package_name": "com.avicodes.herhero"
+          "package_name": "com.avicodes.powerconstruct"
         }
       },
       "oauth_client": [
         {
-          "client_id": "336313643732-elren244nsejnralcq87sb0pkiqfgdts.apps.googleusercontent.com",
+          "client_id": "114133082330-dm9drif31vojb7t012evi4otgptl50be.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.avicodes.herhero",
+            "package_name": "com.avicodes.powerconstruct",
             "certificate_hash": "2a04d9bf14828a6d82ab37bdd9c2bf26427c03b9"
           }
         },
         {
-          "client_id": "336313643732-9u6r29j79dn0sffvf72mkue05sf3ialk.apps.googleusercontent.com",
+          "client_id": "114133082330-0m4uvc0id1k8t4fseqbnf5do6dejt6cc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCoLD7rGhKLxzy1RF3hS_v6tB-z3iwCjkQ"
+          "current_key": "AIzaSyCX9laoHZlQdWezerXGOeD8CY2sD8vQo3Y"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "336313643732-9u6r29j79dn0sffvf72mkue05sf3ialk.apps.googleusercontent.com",
+              "client_id": "114133082330-0m4uvc0id1k8t4fseqbnf5do6dejt6cc.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
